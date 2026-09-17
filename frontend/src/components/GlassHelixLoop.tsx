@@ -205,7 +205,7 @@ export const GlassHelixLoop: React.FC<{ className?: string }> = ({ className = '
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-[450px] md:h-[550px] flex items-center justify-center select-none pointer-events-auto ${className}`}
+      className={`relative w-full h-[520px] md:h-[620px] lg:h-[680px] flex items-center justify-center select-none pointer-events-auto ${className}`}
       aria-hidden="true"
     />
   );

@@ -80,29 +80,29 @@ export const KineticHelixSection: React.FC<KineticHelixSectionProps> = ({
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="lg:col-span-7 relative flex items-center justify-center min-h-[460px] md:min-h-[560px]"
+          className="lg:col-span-7 relative flex items-center justify-center min-h-[580px] md:min-h-[660px] lg:min-h-[720px] py-6"
         >
           {/* Ambient Optic Aura behind Helix Loop and Typography */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[460px] bg-radial from-emerald-400/12 via-teal-500/6 to-transparent blur-[90px] rounded-full pointer-events-none -z-10" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[520px] bg-radial from-emerald-400/14 via-teal-500/6 to-transparent blur-[100px] rounded-full pointer-events-none -z-10" />
 
           {/* Repeating Kinetic Typography Backdrop matching Reference Image */}
-          <div className="absolute inset-0 flex flex-col justify-center items-center select-none pointer-events-none overflow-hidden -z-10 leading-[0.88]">
-            <div className="text-stroke-glass font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+          <div className="absolute inset-0 flex flex-col justify-center items-center select-none pointer-events-none overflow-visible -z-10 leading-[0.92] sm:leading-[0.9] md:leading-[0.88]">
+            <div className="text-stroke-glass font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem] tracking-tighter">
               FRAUD
             </div>
-            <div className="text-glow-glass-white font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+            <div className="text-glow-glass-white font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem] tracking-tighter">
               CONQUER
             </div>
-            <div className="text-gradient-glass-emerald font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+            <div className="text-gradient-glass-emerald font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem] tracking-tighter">
               FRAUD
             </div>
-            <div className="text-stroke-glass font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+            <div className="text-stroke-glass font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem] tracking-tighter">
               CONQUER
             </div>
-            <div className="text-stroke-glass font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+            <div className="text-stroke-glass font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem] tracking-tighter">
               FRAUD
             </div>
-            <div className="text-glow-glass-white font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+            <div className="text-glow-glass-white font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.75rem] tracking-tighter">
               CONQUER
             </div>
           </div>
