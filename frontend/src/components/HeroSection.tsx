@@ -49,7 +49,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAnalyzeClick, onScan
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="ios27-liquid-glass-headline text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold uppercase leading-[0.96] select-none"
+            className="ios27-liquid-glass-headline text-[2.75rem] xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold uppercase leading-[0.96] select-none"
           >
             <span className="text-liquid-glass-silver">
               CYBER
@@ -65,7 +65,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAnalyzeClick, onScan
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-sm sm:text-base md:text-lg smooth-type font-normal tracking-wide text-cyan-100/80 mb-6 max-w-2xl"
+          className="text-xs sm:text-base md:text-lg smooth-type font-normal tracking-wide text-cyan-100/80 mb-6 max-w-2xl px-2"
         >
           To the Perimeter and Beyond — Instant Autonomous Threat Defense
         </motion.p>
@@ -75,12 +75,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAnalyzeClick, onScan
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="flex flex-wrap items-center justify-center gap-3.5 mb-2 z-40"
+          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-3.5 mb-2 z-40 w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto"
         >
           {/* Primary Button: White Capsule with Emerald Arrow Button */}
           <button
             onClick={onAnalyzeClick}
-            className="btn-fxology-primary group inline-flex items-center gap-3 pl-6 pr-2 py-2 text-sm font-semibold cursor-pointer shadow-[0_0_25px_rgba(6,182,212,0.3)]"
+            className="btn-fxology-primary group inline-flex items-center justify-between sm:justify-start gap-3 pl-5 sm:pl-6 pr-2 py-2 text-sm font-semibold cursor-pointer shadow-[0_0_25px_rgba(6,182,212,0.3)] w-full sm:w-auto"
           >
             <span>Analyze Suspicious Message</span>
             <div className="w-8 h-8 rounded-full bg-emerald-500 text-neutral-950 flex items-center justify-center group-hover:bg-cyan-400 group-hover:translate-x-0.5 transition-all shadow-[0_0_12px_rgba(0,229,117,0.5)]">
@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAnalyzeClick, onScan
           {/* Secondary Button: Frosted Glass Capsule */}
           <button
             onClick={handleScannerClick}
-            className="btn-fxology-secondary inline-flex items-center gap-2 px-6 py-3 text-sm font-medium cursor-pointer"
+            className="btn-fxology-secondary inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 text-sm font-medium cursor-pointer w-full sm:w-auto"
           >
             <Sparkles className="w-4 h-4 text-cyan-400" />
             <span>Launch Optical Scanner</span>

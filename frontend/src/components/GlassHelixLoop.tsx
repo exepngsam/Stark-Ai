@@ -11,13 +11,20 @@ export const GlassHelixLoop: React.FC<{ className?: string }> = ({ className = '
     let isVisible = true;
     let animId: number;
 
-    const width = container.clientWidth || 420;
-    const height = container.clientHeight || 520;
+    const width = container.clientWidth || 360;
+    const height = container.clientHeight || 460;
+
+    const getCameraZ = (w: number) => {
+      if (w < 440) return 10.5;
+      if (w < 640) return 9.8;
+      if (w < 1024) return 9.0;
+      return 8.5;
+    };
 
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 100);
-    camera.position.set(0, 0, 8.5);
+    camera.position.set(0, 0, getCameraZ(width));
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -124,6 +131,17 @@ export const GlassHelixLoop: React.FC<{ className?: string }> = ({ className = '
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!e.touches[0] || !container) return;
+      const rect = container.getBoundingClientRect();
+      const touch = e.touches[0];
+      const x = ((touch.clientX - rect.left) / rect.width - 0.5) * 2;
+      const y = ((touch.clientY - rect.top) / rect.height - 0.5) * 2;
+      targetRotY = Math.max(-0.45, Math.min(0.45, x * 0.45));
+      targetRotX = Math.max(-0.35, Math.min(0.35, -y * 0.35));
+    };
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+
     // Visibility and Intersection Observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -137,12 +155,13 @@ export const GlassHelixLoop: React.FC<{ className?: string }> = ({ className = '
     };
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    // Resize Handler
+    // Resize Handler with Dynamic Mobile Aspect and Distance
     const handleResize = () => {
       if (!container) return;
-      const w = container.clientWidth || 420;
-      const h = container.clientHeight || 520;
+      const w = container.clientWidth || 360;
+      const h = container.clientHeight || 460;
       camera.aspect = w / h;
+      camera.position.z = getCameraZ(w);
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
     };
@@ -157,7 +176,7 @@ export const GlassHelixLoop: React.FC<{ className?: string }> = ({ className = '
 
       time += 0.008;
 
-      // Smooth lerp mouse parallax
+      // Smooth lerp mouse/touch parallax
       currentRotX += (targetRotX - currentRotX) * 0.05;
       currentRotY += (targetRotY - currentRotY) * 0.05;
 
@@ -187,6 +206,7 @@ export const GlassHelixLoop: React.FC<{ className?: string }> = ({ className = '
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('resize', handleResize);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       observer.disconnect();
@@ -205,7 +225,7 @@ export const GlassHelixLoop: React.FC<{ className?: string }> = ({ className = '
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-[520px] md:h-[620px] lg:h-[680px] flex items-center justify-center select-none pointer-events-auto ${className}`}
+      className={`relative w-full h-[440px] sm:h-[520px] md:h-[620px] lg:h-[680px] flex items-center justify-center select-none pointer-events-auto ${className}`}
       aria-hidden="true"
     />
   );
