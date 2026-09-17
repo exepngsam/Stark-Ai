@@ -211,16 +211,43 @@ export const StellarMotion3D: React.FC<StellarMotion3DProps> = ({
 
     const clouds: THREE.Group[] = [];
     const cloudPositions = [
-      { x: -5.5, y: -0.6, z: 0.5, s: 1.1 },
-      { x: -3.2, y: -0.4, z: 1.2, s: 1.3 },
-      { x: -1.0, y: -0.7, z: 0.8, s: 1.0 },
-      { x: 1.5, y: -0.5, z: 1.1, s: 1.2 },
-      { x: 3.8, y: -0.8, z: 0.6, s: 1.1 },
-      { x: 5.8, y: -0.5, z: 0.3, s: 1.0 },
+      // Deep Background Horizon Layer
+      { x: -7.5, y: -0.7, z: -1.0, s: 0.9, spdY: 0.7, spdX: 0.3, ph: 0.2 },
+      { x: -5.8, y: -0.5, z: -0.8, s: 1.1, spdY: 0.9, spdX: 0.4, ph: 1.4 },
+      { x: -3.8, y: -0.8, z: -1.2, s: 1.0, spdY: 0.8, spdX: 0.5, ph: 2.1 },
+      { x: -1.8, y: -0.6, z: -0.9, s: 1.2, spdY: 1.1, spdX: 0.3, ph: 3.5 },
+      { x: 0.2,  y: -0.9, z: -1.1, s: 1.0, spdY: 0.8, spdX: 0.4, ph: 4.2 },
+      { x: 2.2,  y: -0.6, z: -0.8, s: 1.3, spdY: 1.0, spdX: 0.5, ph: 5.1 },
+      { x: 4.4,  y: -0.8, z: -1.0, s: 1.1, spdY: 0.9, spdX: 0.3, ph: 0.8 },
+      { x: 6.5,  y: -0.5, z: -0.9, s: 1.0, spdY: 0.7, spdX: 0.4, ph: 2.7 },
+
+      // Midground Dense Cloud Bank
+      { x: -6.8, y: -0.4, z: 0.4, s: 1.2, spdY: 1.2, spdX: 0.6, ph: 1.1 },
+      { x: -4.6, y: -0.3, z: 0.8, s: 1.4, spdY: 1.0, spdX: 0.5, ph: 2.9 },
+      { x: -2.6, y: -0.5, z: 0.5, s: 1.3, spdY: 1.3, spdX: 0.7, ph: 4.4 },
+      { x: -0.6, y: -0.3, z: 0.9, s: 1.5, spdY: 1.1, spdX: 0.4, ph: 0.5 },
+      { x: 1.4,  y: -0.4, z: 0.6, s: 1.4, spdY: 1.4, spdX: 0.6, ph: 3.2 },
+      { x: 3.4,  y: -0.3, z: 0.8, s: 1.3, spdY: 1.2, spdX: 0.5, ph: 1.9 },
+      { x: 5.4,  y: -0.5, z: 0.5, s: 1.2, spdY: 1.0, spdX: 0.7, ph: 5.4 },
+      { x: 7.2,  y: -0.3, z: 0.7, s: 1.1, spdY: 0.9, spdX: 0.4, ph: 2.3 },
+
+      // Foreground Volumetric Puffy Billows
+      { x: -5.2, y: -0.2, z: 1.4, s: 1.4, spdY: 1.5, spdX: 0.8, ph: 0.9 },
+      { x: -1.6, y: -0.1, z: 1.6, s: 1.6, spdY: 1.3, spdX: 0.6, ph: 3.8 },
+      { x: 2.5,  y: -0.1, z: 1.5, s: 1.5, spdY: 1.4, spdX: 0.7, ph: 1.6 },
+      { x: 6.0,  y: -0.2, z: 1.3, s: 1.3, spdY: 1.2, spdX: 0.5, ph: 4.9 },
     ];
 
     cloudPositions.forEach((pos) => {
       const c = createCloudCluster(pos.x, pos.y, pos.z, pos.s);
+      c.userData = {
+        baseX: pos.x,
+        baseY: pos.y,
+        baseZ: pos.z,
+        spdY: pos.spdY,
+        spdX: pos.spdX,
+        ph: pos.ph,
+      };
       clouds.push(c);
       horizonGroup.add(c);
     });
@@ -300,44 +327,66 @@ export const StellarMotion3D: React.FC<StellarMotion3DProps> = ({
       });
     }
 
-    // (E) Anamorphic Lens Flare Beam & Solar Ray
-    const flareGroup = new THREE.Group();
-    flareGroup.position.set(1.5, 1.8, -1.0);
-    cosmosGroup.add(flareGroup);
+    // (E) Tertiary Faceted Sun-Planet (Center-Left / Gold & Amber)
+    const tertiaryPlanetGroup = new THREE.Group();
+    tertiaryPlanetGroup.position.set(0.6, 1.6, -1.8);
+    cosmosGroup.add(tertiaryPlanetGroup);
 
-    // Horizontal Flare Streak
-    const streakGeo = new THREE.PlaneGeometry(10.0, 0.12);
-    const streakMat = new THREE.MeshBasicMaterial({
-      color: 0xffedd5, // Warm solar amber streak
+    const tertiaryGeo = new THREE.IcosahedronGeometry(1.5, 1).toNonIndexed();
+    const tertiaryPos = tertiaryGeo.attributes.position;
+    const tertiaryColors: number[] = [];
+    const tertiaryPalette = [
+      new THREE.Color(0xf59e0b), // Vibrant Amber
+      new THREE.Color(0xfbbf24), // Radiant Gold
+      new THREE.Color(0xf97316), // Warm Orange
+      new THREE.Color(0xfde68a), // Pale Sunlight
+      new THREE.Color(0xd97706), // Deep Bronze
+      new THREE.Color(0xef4444), // Coral Red
+    ];
+
+    for (let i = 0; i < tertiaryPos.count; i += 3) {
+      const pY = (tertiaryPos.getY(i) + tertiaryPos.getY(i + 1) + tertiaryPos.getY(i + 2)) / 3;
+      const idx = Math.floor(Math.abs(Math.sin(pY * 2.8)) * tertiaryPalette.length) % tertiaryPalette.length;
+      const c = tertiaryPalette[idx];
+      for (let j = 0; j < 3; j++) {
+        tertiaryColors.push(c.r, c.g, c.b);
+      }
+    }
+    tertiaryGeo.setAttribute('color', new THREE.Float32BufferAttribute(tertiaryColors, 3));
+    tertiaryGeo.computeVertexNormals();
+
+    const tertiaryMat = new THREE.MeshStandardMaterial({
+      vertexColors: true,
+      flatShading: true,
+      roughness: 0.4,
+      metalness: 0.25,
+    });
+    const tertiaryPlanetMesh = new THREE.Mesh(tertiaryGeo, tertiaryMat);
+    tertiaryPlanetGroup.add(tertiaryPlanetMesh);
+
+    // Tertiary Planet Atmospheric Glow Ring
+    const tertiaryHaloGeo = new THREE.RingGeometry(1.65, 1.95, 36);
+    const tertiaryHaloMat = new THREE.MeshBasicMaterial({
+      color: 0xf59e0b,
       transparent: true,
-      opacity: 0.65,
-      blending: THREE.AdditiveBlending,
+      opacity: 0.4,
       side: THREE.DoubleSide,
-    });
-    const flareStreak = new THREE.Mesh(streakGeo, streakMat);
-    flareGroup.add(flareStreak);
-
-    // Core Solar Glow
-    const coreGlowGeo = new THREE.CircleGeometry(0.7, 32);
-    const coreGlowMat = new THREE.MeshBasicMaterial({
-      color: 0xfef08a,
-      transparent: true,
-      opacity: 0.7,
       blending: THREE.AdditiveBlending,
     });
-    const flareCore = new THREE.Mesh(coreGlowGeo, coreGlowMat);
-    flareGroup.add(flareCore);
+    const tertiaryHalo = new THREE.Mesh(tertiaryHaloGeo, tertiaryHaloMat);
+    tertiaryPlanetGroup.add(tertiaryHalo);
 
-    // Cyan Secondary Flare Ring
-    const ringFlareGeo = new THREE.RingGeometry(0.9, 1.1, 32);
-    const ringFlareMat = new THREE.MeshBasicMaterial({
-      color: 0x38bdf8,
-      transparent: true,
-      opacity: 0.35,
-      blending: THREE.AdditiveBlending,
-    });
-    const flareRing = new THREE.Mesh(ringFlareGeo, ringFlareMat);
-    flareGroup.add(flareRing);
+    // Orbiting micro-satellites around Tertiary Planet
+    const tertiaryOrbitGroup = new THREE.Group();
+    tertiaryPlanetGroup.add(tertiaryOrbitGroup);
+    const tertiarySatGeo = new THREE.TetrahedronGeometry(0.12, 0);
+    const tertiarySatMat = new THREE.MeshBasicMaterial({ color: 0xfde68a });
+    for (let i = 0; i < 4; i++) {
+      const sat = new THREE.Mesh(tertiarySatGeo, tertiarySatMat);
+      const angle = (i / 4) * Math.PI * 2;
+      sat.position.set(Math.cos(angle) * 2.2, Math.sin(angle) * 1.1, Math.sin(angle * 2) * 0.4);
+      tertiaryOrbitGroup.add(sat);
+    }
 
     // ═════════════════════════════════════════════════════════════
     // 3. CONSTELLATION PHASE (Pinterest Pin Frame 5 Parity)
@@ -531,19 +580,39 @@ export const StellarMotion3D: React.FC<StellarMotion3DProps> = ({
       constellationGroup.position.z = (1 - transitionProgress) * -8.0;
       constellationGroup.visible = transitionProgress > 0.05;
 
-      // Animate Primary Planet
-      planetMesh.rotation.y += 0.0035;
-      planetHalo.rotation.z += 0.002;
+      // 1. Primary Planet (Emerald / Cyan / Obsidian) - Free 3D floating & rotation
+      primaryPlanetGroup.position.x = 4.2 + Math.sin(time * 0.42) * 0.65;
+      primaryPlanetGroup.position.y = 2.6 + Math.cos(time * 0.58) * 0.5;
+      primaryPlanetGroup.position.z = -1.5 + Math.sin(time * 0.35) * 0.4;
+      planetMesh.rotation.y += 0.004;
+      planetMesh.rotation.x = Math.sin(time * 0.3) * 0.12;
+      planetHalo.rotation.z += 0.0025;
 
-      // Animate Secondary Moon
-      moonMesh.rotation.y += 0.005;
-      moonMesh.rotation.x = Math.sin(time * 0.5) * 0.1;
-      moonOrbitGroup.rotation.y += 0.015;
+      // 2. Secondary Moon (Ice-Cyan / Mint) - Free 3D orbital path & rotation
+      moonGroup.position.x = -4.5 + Math.cos(time * 0.48) * 0.8;
+      moonGroup.position.y = 2.2 + Math.sin(time * 0.62) * 0.55;
+      moonGroup.position.z = -2.5 + Math.cos(time * 0.38) * 0.45;
+      moonMesh.rotation.y += 0.006;
+      moonMesh.rotation.z = Math.sin(time * 0.4) * 0.15;
+      moonOrbitGroup.rotation.y += 0.018;
+      moonOrbitGroup.rotation.x += 0.008;
 
-      // Animate Floating Clouds (Gentle horizontal drift)
-      clouds.forEach((c, idx) => {
-        c.position.y += Math.sin(time * 1.2 + idx) * 0.0008;
-        c.position.x += Math.cos(time * 0.8 + idx) * 0.0005;
+      // 3. Tertiary Planet (Golden Amber / Radiant Sun-Orb) - Free 3D drifting & rotation
+      tertiaryPlanetGroup.position.x = 0.6 + Math.sin(time * 0.52 + 1.8) * 0.85;
+      tertiaryPlanetGroup.position.y = 1.6 + Math.cos(time * 0.44 + 1.1) * 0.6;
+      tertiaryPlanetGroup.position.z = -1.8 + Math.sin(time * 0.48) * 0.5;
+      tertiaryPlanetMesh.rotation.y += 0.005;
+      tertiaryPlanetMesh.rotation.x = Math.cos(time * 0.35) * 0.1;
+      tertiaryHalo.rotation.z -= 0.003;
+      tertiaryOrbitGroup.rotation.y += 0.016;
+
+      // Animate Dense Multi-Layered Clouds (Organic drifting undulation)
+      clouds.forEach((c) => {
+        const d = c.userData;
+        if (d) {
+          c.position.y = d.baseY + Math.sin(time * d.spdY + d.ph) * 0.07;
+          c.position.x = d.baseX + Math.cos(time * d.spdX + d.ph) * 0.035;
+        }
       });
 
       // Animate Supersonic Spacecraft & Volumetric Plume
@@ -572,10 +641,6 @@ export const StellarMotion3D: React.FC<StellarMotion3DProps> = ({
         puffObj.mesh.position.x -= 0.025;
         puffObj.mesh.position.y -= 0.018;
       });
-
-      // Animate Anamorphic Lens Flare
-      flareGroup.position.x = 1.5 + Math.sin(time * 0.6) * 0.25;
-      flareStreak.scale.x = 1.0 + Math.sin(time * 1.5) * 0.08;
 
       // Animate Constellation Star Nodes & Glows
       if (constellationGroup.visible) {
@@ -623,12 +688,12 @@ export const StellarMotion3D: React.FC<StellarMotion3DProps> = ({
       canopyGeo.dispose();
       wingGeo.dispose();
       puffGeo.dispose();
-      streakGeo.dispose();
-      streakMat.dispose();
-      coreGlowGeo.dispose();
-      coreGlowMat.dispose();
-      ringFlareGeo.dispose();
-      ringFlareMat.dispose();
+      tertiaryGeo.dispose();
+      tertiaryMat.dispose();
+      tertiaryHaloGeo.dispose();
+      tertiaryHaloMat.dispose();
+      tertiarySatGeo.dispose();
+      tertiarySatMat.dispose();
       starNodeGeo.dispose();
       starNodeMat.dispose();
       starAuraGeo.dispose();
