@@ -1,0 +1,163 @@
+<svg width="100%" height="380" viewBox="0 0 1000 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="arch-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#03060c"/>
+      <stop offset="50%" stop-color="#080e1a"/>
+      <stop offset="100%" stop-color="#040810"/>
+    </linearGradient>
+
+    <linearGradient id="stream-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5ff"/>
+      <stop offset="100%" stop-color="#00e575"/>
+    </linearGradient>
+
+    <filter id="arch-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes dataPulse {
+      0% { stroke-dashoffset: 60; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes memPulse {
+      0%, 100% { stroke-opacity: 0.3; }
+      50% { stroke-opacity: 0.9; }
+    }
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .data-flow-line {
+      stroke-dasharray: 6 5;
+      animation: dataPulse 1.4s linear infinite;
+    }
+    .ram-border {
+      animation: memPulse 2.8s ease-in-out infinite;
+    }
+    .particle {
+      animation: floatParticle 3s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Container Box -->
+  <rect width="1000" height="380" rx="16" fill="url(#arch-bg)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Title & Architecture Header -->
+  <text x="35" y="42" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="18" font-weight="800" fill="#f8fafc" letter-spacing="1">
+    STARK AI // DATA ARCHITECTURE &amp; ZERO-PERSISTENCE MEMORY LIFECYCLE
+  </text>
+  <text x="35" y="62" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">
+    END-TO-END CRYPTOGRAPHIC DATA BOUNDARY WITH EPHEMERAL RAM EXECUTION
+  </text>
+
+  <!-- Animated Data Interconnects -->
+  <g stroke="url(#stream-cyan)" stroke-width="2" class="data-flow-line">
+    <!-- Client to Gateway -->
+    <path d="M 230 190 L 290 190"/>
+    <!-- Gateway to Vision / Heuristic -->
+    <path d="M 440 150 L 510 150"/>
+    <path d="M 440 230 L 510 230"/>
+    <!-- Engines to Bedrock AI -->
+    <path d="M 680 150 L 740 190"/>
+    <path d="M 680 230 L 740 190"/>
+    <!-- Bedrock to Proof Engine -->
+    <path d="M 870 190 L 910 190"/>
+  </g>
+
+  <!-- ==================== TIER 1: CLIENT EDGE ==================== -->
+  <g transform="translate(35, 90)">
+    <rect width="195" height="230" rx="12" fill="#080e18" stroke="#38bdf8" stroke-width="1.5" class="ram-border"/>
+    <rect x="12" y="14" width="75" height="20" rx="4" fill="#38bdf8" fill-opacity="0.15"/>
+    <text x="18" y="28" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#38bdf8">CLIENT EDGE</text>
+    
+    <text x="14" y="58" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">React 19 &amp; Three.js</text>
+    <text x="14" y="78" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">• StellarX 3D Canvas</text>
+    <text x="14" y="96" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">• Drag-and-Drop Buffer</text>
+    <text x="14" y="114" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">• Awareness Sandbox</text>
+    <text x="14" y="132" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">• Glassmorphic Reticle</text>
+
+    <line x1="14" y1="150" x2="181" y2="150" stroke="#1e293b" stroke-width="1"/>
+    
+    <rect x="14" y="165" width="167" height="42" rx="6" fill="#020610" stroke="#1e293b"/>
+    <text x="22" y="182" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00f5ff">IN-MEMORY CANVAS</text>
+    <text x="22" y="196" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#64748b">Direct WebGL Rendering</text>
+  </g>
+
+  <!-- ==================== TIER 2: GATEWAY & INGRESS ==================== -->
+  <g transform="translate(290, 90)">
+    <rect width="150" height="230" rx="12" fill="#080e18" stroke="#00f5ff" stroke-width="1.5" class="ram-border"/>
+    <rect x="12" y="14" width="85" height="20" rx="4" fill="#00f5ff" fill-opacity="0.15"/>
+    <text x="18" y="28" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#00f5ff">FASTAPI INGRESS</text>
+    
+    <text x="14" y="58" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Zero-Disk RAM</text>
+    <text x="14" y="78" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">• Multipart bytes stream</text>
+    <text x="14" y="96" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">• Rate limit filter</text>
+    <text x="14" y="114" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">• Sanitize input</text>
+    
+    <line x1="14" y1="135" x2="136" y2="135" stroke="#1e293b" stroke-width="1"/>
+    
+    <rect x="14" y="150" width="122" height="58" rx="6" fill="#031525" stroke="#00f5ff" stroke-opacity="0.3"/>
+    <circle cx="26" cy="168" r="4" fill="#00e575"/>
+    <text x="36" y="171" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#00e575">RAM ISOLATION</text>
+    <text x="20" y="192" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8">Auto Garbage Collected</text>
+  </g>
+
+  <!-- ==================== TIER 3: DUAL ENGINE PROCESSING ==================== -->
+  <g transform="translate(510, 90)">
+    <!-- Submodule 3A: OpenCV -->
+    <rect width="170" height="105" rx="10" fill="#080e18" stroke="#a855f7" stroke-width="1.5" class="ram-border"/>
+    <rect x="10" y="10" width="60" height="18" rx="4" fill="#a855f7" fill-opacity="0.15"/>
+    <text x="14" y="22" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#a855f7">CV ENGINE</text>
+    <text x="12" y="46" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#f1f5f9">OpenCV &amp; PyZbar</text>
+    <text x="12" y="64" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">• Finder pattern isolation</text>
+    <text x="12" y="80" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">• UPI parameter extraction</text>
+
+    <!-- Submodule 3B: Heuristics -->
+    <g transform="translate(0, 125)">
+      <rect width="170" height="105" rx="10" fill="#080e18" stroke="#f59e0b" stroke-width="1.5" class="ram-border"/>
+      <rect x="10" y="10" width="70" height="18" rx="4" fill="#f59e0b" fill-opacity="0.15"/>
+      <text x="14" y="22" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#f59e0b">HEURISTICS</text>
+      <text x="12" y="46" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#f1f5f9">Regex &amp; Weights</text>
+      <text x="12" y="64" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">• Urgency keyword score</text>
+      <text x="12" y="80" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">• Threat vector matrix</text>
+    </g>
+  </g>
+
+  <!-- ==================== TIER 4: AWS BEDROCK AI ==================== -->
+  <g transform="translate(740, 90)">
+    <rect width="130" height="230" rx="12" fill="#080e18" stroke="#ff9900" stroke-width="1.5" class="ram-border"/>
+    <rect x="10" y="14" width="70" height="20" rx="4" fill="#ff9900" fill-opacity="0.15"/>
+    <text x="16" y="28" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#ff9900">AWS BEDROCK</text>
+    
+    <text x="10" y="58" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#f1f5f9">Claude 3.5</text>
+    <text x="10" y="78" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">• Social engineering</text>
+    <text x="10" y="94" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">• Psychological trap</text>
+    <text x="10" y="110" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">• Mitigation steps</text>
+    
+    <line x1="10" y1="135" x2="120" y2="135" stroke="#1e293b" stroke-width="1"/>
+    
+    <rect x="10" y="150" width="110" height="58" rx="6" fill="#180e03" stroke="#ff9900" stroke-opacity="0.3"/>
+    <text x="14" y="172" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#ff9900">ZERO TRAINING</text>
+    <text x="14" y="190" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#94a3b8">No Data Retention</text>
+  </g>
+
+  <!-- ==================== TIER 5: PROOF VAULT ==================== -->
+  <g transform="translate(910, 90)">
+    <rect width="60" height="230" rx="10" fill="#080e18" stroke="#00e575" stroke-width="1.5" class="ram-border"/>
+    <text x="12" y="28" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#00e575">VAULT</text>
+    
+    <text x="10" y="70" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#00e575" transform="rotate(90, 10, 70)">SEC-HASH</text>
+    <text x="32" y="125" font-family="'JetBrains Mono', monospace" font-size="9" fill="#fde68a" transform="rotate(90, 32, 125)">DIAL 1930</text>
+    <text x="12" y="215" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8">CERT</text>
+  </g>
+
+  <!-- Bottom Data Lifecycle Security Note -->
+  <g transform="translate(35, 340)">
+    <text x="0" y="15" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">
+      SECURITY DIRECTIVE: <tspan fill="#00f5ff">IN-MEMORY EXECUTION</tspan> — ZERO WRITES TO PERSISTENT DATABASE / ZERO PII LEAKAGE
+    </text>
+  </g>
+</svg>

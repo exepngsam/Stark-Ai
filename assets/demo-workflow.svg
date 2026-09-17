@@ -1,0 +1,180 @@
+<svg width="100%" height="320" viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="demo-card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040812"/>
+      <stop offset="50%" stop-color="#091322"/>
+      <stop offset="100%" stop-color="#03060a"/>
+    </linearGradient>
+
+    <linearGradient id="neon-laser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5ff"/>
+      <stop offset="50%" stop-color="#00e575"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <filter id="demo-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="laser-pass" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes scanVertical {
+      0% { transform: translateY(0px); opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { transform: translateY(110px); opacity: 0; }
+    }
+    @keyframes pulseCardGlow {
+      0%, 100% { stroke-opacity: 0.3; }
+      50% { stroke-opacity: 0.9; }
+    }
+    @keyframes flowDots {
+      0% { stroke-dashoffset: 40; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes alertBeacon {
+      0%, 100% { fill-opacity: 0.2; }
+      50% { fill-opacity: 0.8; }
+    }
+    .demo-scanner {
+      animation: scanVertical 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .demo-step-box {
+      animation: pulseCardGlow 3.5s ease-in-out infinite;
+    }
+    .dot-flow {
+      stroke-dasharray: 6 6;
+      animation: flowDots 1.2s linear infinite;
+    }
+    .beacon {
+      animation: alertBeacon 1.2s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Container Frame -->
+  <rect width="1000" height="320" rx="16" fill="url(#demo-card-bg)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <text x="35" y="40" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="18" font-weight="800" fill="#f8fafc" letter-spacing="1">
+    STARK AI // INTERACTIVE USER DEMO WALKTHROUGH
+  </text>
+  <text x="35" y="60" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748b">
+    STEP-BY-STEP INCIDENT RESPONSE &amp; AUTONOMOUS THREAT NEUTRALIZATION LIFECYCLE
+  </text>
+
+  <!-- Connecting Arrows Between Steps -->
+  <g stroke="url(#neon-laser)" stroke-width="2" class="dot-flow">
+    <line x1="230" y1="170" x2="270" y2="170"/>
+    <line x1="475" y1="170" x2="515" y2="170"/>
+    <line x1="720" y1="170" x2="760" y2="170"/>
+  </g>
+
+  <!-- ==================== DEMO STEP 1 ==================== -->
+  <g transform="translate(35, 85)">
+    <rect width="195" height="185" rx="12" fill="#080f1d" stroke="#00f5ff" stroke-width="1.5" class="demo-step-box"/>
+    <!-- Step Badge -->
+    <rect x="12" y="14" width="70" height="20" rx="4" fill="#00f5ff" fill-opacity="0.12"/>
+    <text x="18" y="28" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#00f5ff">STEP 01 // INPUT</text>
+    
+    <text x="14" y="58" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#ffffff">Paste or Drop</text>
+    
+    <!-- Visual Mockup of Dropzone -->
+    <g transform="translate(14, 70)">
+      <rect width="167" height="92" rx="6" fill="#040812" stroke="#1e293b" stroke-dasharray="3 3"/>
+      <!-- Small Cloud Icon -->
+      <circle cx="83" cy="38" r="14" fill="#00f5ff" fill-opacity="0.1"/>
+      <path d="M 77 40 L 83 34 L 89 40 M 83 35 L 83 46" stroke="#00f5ff" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="83" y="66" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" fill="#94a3b8">Drop QR or SMS</text>
+      <text x="83" y="78" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00e575">e.g. ₹4,999 Refund</text>
+    </g>
+  </g>
+
+  <!-- ==================== DEMO STEP 2 ==================== -->
+  <g transform="translate(270, 85)">
+    <rect width="205" height="185" rx="12" fill="#080f1d" stroke="#38bdf8" stroke-width="1.5" class="demo-step-box"/>
+    <!-- Step Badge -->
+    <rect x="12" y="14" width="80" height="20" rx="4" fill="#38bdf8" fill-opacity="0.12"/>
+    <text x="18" y="28" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#38bdf8">STEP 02 // SCAN</text>
+    
+    <text x="14" y="58" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#ffffff">Optical CV Decoding</text>
+    
+    <!-- Laser Scan Demonstration Box -->
+    <g transform="translate(14, 70)">
+      <rect width="177" height="92" rx="6" fill="#040812" stroke="#1e293b"/>
+      <!-- QR Matrix pattern mockup -->
+      <rect x="16" y="14" width="22" height="22" fill="#38bdf8" fill-opacity="0.4"/>
+      <rect x="139" y="14" width="22" height="22" fill="#38bdf8" fill-opacity="0.4"/>
+      <rect x="16" y="56" width="22" height="22" fill="#38bdf8" fill-opacity="0.4"/>
+      
+      <!-- Scanline Laser -->
+      <g class="demo-scanner">
+        <line x1="8" y1="0" x2="169" y2="0" stroke="#00f5ff" stroke-width="2" filter="url(#laser-pass)"/>
+      </g>
+
+      <text x="50" y="42" font-family="'JetBrains Mono', monospace" font-size="9" fill="#fca5a5">upi://pay?am=4999</text>
+      <text x="50" y="56" font-family="'JetBrains Mono', monospace" font-size="8" fill="#ef4444">⚠ DEBIT TRAP ISOLATED</text>
+    </g>
+  </g>
+
+  <!-- ==================== DEMO STEP 3 ==================== -->
+  <g transform="translate(515, 85)">
+    <rect width="205" height="185" rx="12" fill="#080f1d" stroke="#ef4444" stroke-width="1.5" class="demo-step-box"/>
+    <!-- Step Badge -->
+    <rect x="12" y="14" width="85" height="20" rx="4" fill="#ef4444" fill-opacity="0.15"/>
+    <text x="18" y="28" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#ef4444">STEP 03 // VERDICT</text>
+    
+    <text x="14" y="58" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#ffffff">Instant AI Diagnosis</text>
+    
+    <!-- Risk Meter & Explanation Mockup -->
+    <g transform="translate(14, 70)">
+      <rect width="177" height="92" rx="6" fill="#14080c" stroke="#ef4444" stroke-opacity="0.4"/>
+      <circle class="beacon" cx="22" cy="22" r="6" fill="#ef4444"/>
+      <text x="34" y="26" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#ef4444">CRITICAL 98%</text>
+      
+      <text x="14" y="48" font-family="-apple-system, sans-serif" font-size="9.5" fill="#f87171">• Fake Cashback Scam</text>
+      <text x="14" y="62" font-family="-apple-system, sans-serif" font-size="9.5" fill="#f87171">• Mandates UPI PIN Entry</text>
+      
+      <rect x="14" y="72" width="149" height="14" rx="3" fill="#ef4444" fill-opacity="0.2"/>
+      <text x="20" y="82" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#fca5a5">RECEIVING MONEY NEVER NEEDS PIN</text>
+    </g>
+  </g>
+
+  <!-- ==================== DEMO STEP 4 ==================== -->
+  <g transform="translate(760, 85)">
+    <rect width="205" height="185" rx="12" fill="#080f1d" stroke="#00e575" stroke-width="1.5" class="demo-step-box"/>
+    <!-- Step Badge -->
+    <rect x="12" y="14" width="85" height="20" rx="4" fill="#00e575" fill-opacity="0.15"/>
+    <text x="18" y="28" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#00e575">STEP 04 // ACTION</text>
+    
+    <text x="14" y="58" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#ffffff">Certified Defense</text>
+    
+    <!-- Proof & Helpline Mockup -->
+    <g transform="translate(14, 70)">
+      <rect width="177" height="92" rx="6" fill="#06140c" stroke="#00e575" stroke-opacity="0.4"/>
+      
+      <!-- Dial 1930 Button -->
+      <rect x="12" y="14" width="153" height="26" rx="6" fill="#fbbf24" fill-opacity="0.2" stroke="#fbbf24"/>
+      <circle cx="26" cy="27" r="4" fill="#fbbf24"/>
+      <text x="36" y="31" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#fde68a">Dial Helpline 1930</text>
+      
+      <!-- SEC-HASH Chip -->
+      <rect x="12" y="48" width="153" height="20" rx="4" fill="#00e575" fill-opacity="0.15"/>
+      <text x="18" y="62" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#00e575">SEC-HASH: #8F2D1A</text>
+      
+      <text x="12" y="80" font-family="-apple-system, sans-serif" font-size="8" fill="#94a3b8">Lodged at cybercrime.gov.in</text>
+    </g>
+  </g>
+
+  <!-- Bottom Telemetry Status -->
+  <g transform="translate(35, 285)">
+    <text x="0" y="15" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#64748b">
+      TOTAL TIME TO DEFEND: <tspan fill="#00e575" font-weight="700">&lt; 85 MILLISECONDS</tspan> // ZERO LOG RETENTION // PII FULLY STRIPPED
+    </text>
+  </g>
+</svg>

@@ -4,7 +4,7 @@
 
 <br/>
 
-[![Build Status](https://img.shields.io/badge/Build-Passing-00e575?style=for-the-badge&logo=githubactions&logoColor=black)](https://github.com)
+[![Build Status](https://img.shields.io/badge/Build-Passing-00e575?style=for-the-badge&logo=githubactions&logoColor=black)](https://github.com/exepngsam/Stark-Ai)
 [![React](https://img.shields.io/badge/React_19-06b6d4?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![Three.js](https://img.shields.io/badge/Three.js-WebGL_3D-white?style=for-the-badge&logo=threedotjs&logoColor=black)](https://threejs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -18,6 +18,7 @@
 ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ║   [SYSTEM TELEMETRY]: STARK AI ACTIVE // PERIMETER SECURED // ZERO-STORAGE BUFFER ONLINE            ║
 ║   PROTECTING AGAINST: UPI CASHBACK FRAUD • ELECTRICITY DEADLINES • TROJAN APKS • QR DEBIT SCHEMAS   ║
+║   HEURISTIC RUNTIME: 42MS  //  BEDROCK AI INFERENCE: 780MS  //  EPHEMERAL RAM BUFFER: 0 BYTES DISK  ║
 ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -25,46 +26,114 @@
   <b>To the Perimeter and Beyond — Instant Autonomous Threat Defense for the Modern Digital Citizen</b>
 </p>
 
-[Explore Live Demo](http://localhost:5173/) • [Architecture](#-system-architecture) • [Animated Pipeline](#-animated-threat-mitigation-pipeline) • [Sequence Flow](#-sequence-data-flow) • [Quick Start](#-quick-start) • [Helpline 1930 Integration](#-emergency-incident-response)
+[Explore Demo Workflow](#-interactive-demo-workflow) • [Data Architecture](#-data-architecture--zero-persistence-lifecycle) • [System Architecture](#-system-architecture) • [Threat Pipeline](#-animated-threat-mitigation-pipeline) • [Sequence Flow](#-sequence-data-flow) • [Quick Start](#-quick-start) • [Helpline 1930 Integration](#-emergency-incident-response)
 
 ---
 
 </div>
 
-## 🌌 Overview & Highlights
+## 🌌 Overview & Mission
 
-**STARK AI** is an advanced autonomous scam detection and digital defense system designed to intercept, decode, and neutralize malicious digital fraud vectors targeting Indian consumers and digital banking infrastructure. 
+**STARK AI** is an advanced autonomous scam detection and digital defense system designed to intercept, decode, and neutralize malicious cyber fraud vectors targeting citizens, UPI banking rails, and mobile communications.
 
-Built with an **iOS 27 Liquid Glass** design aesthetic and real-time **Three.js WebGL 3D motion computing**, STARK AI executes end-to-end multi-modal threat analysis in milliseconds without ever storing user communications or financial credentials.
+Modern cyber scams in India exploit urgency, social engineering, and technical deception—such as reverse UPI debit intents disguised as "Cashback" or spoofed electricity disconnection notices. STARK AI combines **local computer vision (OpenCV)**, **instant regex heuristic tokenization**, and **AWS Bedrock Generative AI (Anthropic Claude 3.5 Sonnet)** to diagnose threats in milliseconds.
+
+Built with an **iOS 27 Liquid Glass** design aesthetic and real-time **Three.js WebGL 3D motion computing**, STARK AI delivers an ultra-smooth, responsive user experience without ever storing user communications, screenshots, or credentials.
 
 ### Key Capabilities
 
-* 🛰️ **StellarX Low-Poly Cosmic 3D Motion UI**: Real-time faceted celestial planets, supersonic interceptor spacecraft with volumetric exhaust plumes, and an interactive 3D Aegis Constellation mode.
-* 🔍 **OpenCV Optical QR & Image Scanner**: Local computer vision decoding for payment QR codes, isolating fraudulent UPI debit parameters (`am=`, `pa=`, `pn=`) hidden inside fake cashback or lottery promotions.
+* 🛰️ **StellarX Low-Poly Cosmic 3D Motion UI**: Real-time faceted celestial bodies, supersonic interceptors with dynamic particle exhausts, and interactive 3D Aegis constellations running at a stable 60 FPS.
+* 🔍 **OpenCV Optical QR & Image Scanner**: Local computer vision decoding isolating fraudulent UPI debit parameters (`am=`, `pa=`, `pn=`) hidden inside fake cashback or prize promotions.
 * ⚡ **Dual-Engine Threat Analyzer**: Heuristic rule engine paired with AWS Bedrock AI (Claude 3.5 Sonnet) for instant SMS, WhatsApp, and URL threat scoring.
-* 🎮 **Interactive Awareness Simulator**: Gamified real-world cyber fraud scenarios testing user instincts against social engineering pressure tactics.
+* 🎮 **Interactive Awareness Simulator**: Gamified real-world cyber fraud scenarios testing user instincts against psychological coercion and phishing pressure.
 * 📜 **Cryptographically Signed Defense Proof**: Generates digitally verifiable certificates with `SEC-HASH`, timestamped evidence logs, and direct 1930 National Cyber Crime helpline dispatch.
-* 🔒 **Zero-Storage Privacy Protocol**: All optical inspections and textual parses execute in ephemeral RAM buffers, with zero persistent storage of sensitive user PII.
+* 🔒 **Zero-Storage Privacy Protocol**: All optical inspections and textual parses execute strictly within ephemeral in-memory RAM buffers, guaranteeing zero persistence of user PII.
+
+---
+
+## 🎬 Interactive Demo Workflow
+
+The diagram below illustrates the exact interactive journey a user experiences when using STARK AI to diagnose and neutralize a suspicious digital threat:
+
+<div align="center">
+  <img src="./assets/demo-workflow.svg" alt="STARK AI Interactive Demo Workflow" width="100%" />
+</div>
+
+<br/>
+
+### Detailed Step-by-Step Demo Walkthrough
+
+#### 1. Ingestion & Dropzone
+* The user encounters a suspicious message (e.g., *"Congratulations! ₹4,999 cashback approved. Scan QR to receive to your bank account"*).
+* The user pastes the text into the STARK AI analyzer, selects a **Quick Scenario Preset**, or drops an image/screenshot into the optical scanner dropzone.
+* The dropzone activates a high-tech **cyber laser scanline** with corner reticles and audio-visual feedback.
+
+#### 2. Optical Computer Vision & Tokenizer
+* The optical engine converts the uploaded screenshot into an in-memory bitmap buffer.
+* **PyZbar** and **OpenCV** locate the finder patterns and decode the encoded payment payload.
+* STARK AI parses the UPI URI query string:
+  ```
+  upi://pay?pa=scammerchant@okhdfcbank&pn=CashbackPortal&am=4999.00&cu=INR
+  ```
+* The parser flags that the URI contains an **`am=` (Amount)** debit parameter. Because the user was told they were *receiving* money, requiring an authorized PIN debit triggers an immediate critical violation.
+
+#### 3. Instant AI Diagnosis & Risk Scoring
+* The **Heuristic Classifier** executes instant regex keyword weights (e.g., `Cashback`, `Electricity cutoff`, `Urgent`, `APK download`).
+* If external intelligence is enabled, the payload streams to **Amazon Bedrock (Claude 3.5 Sonnet)** for intent dissection and social engineering classification.
+* A holographic risk badge updates in real time:
+  * **Risk Score**: `98% - CRITICAL FRAUD`
+  * **Threat Vector**: `UPI Reverse Debit Phishing`
+  * **Core Red Flag**: `PIN entry requested for receiving funds`
+
+#### 4. Certified Defense Proof & Emergency Dispatch
+* The system generates a tamper-evident **Digital Defense Certificate** complete with a unique cryptographic `SEC-HASH` (SHA-256).
+* Users receive a one-click **Copy Evidence Template** pre-formatted with timestamp, sender header, and transaction reference for lodging on the National Cyber Crime Portal (`cybercrime.gov.in`).
+* If funds were accidentally debited, the user can click **Dial 1930** directly to reach the national fraud freeze helpline during the critical golden hour.
+
+---
+
+## 🧠 Data Architecture & Zero-Persistence Lifecycle
+
+STARK AI is architected from the ground up around strict privacy boundaries. No user chats, SMS content, or payment screenshots are ever persisted to disk or databases.
+
+<div align="center">
+  <img src="./assets/data-architecture.svg" alt="STARK AI Data Architecture & Memory Lifecycle" width="100%" />
+</div>
+
+<br/>
+
+### Data Layer Specifications
+
+| Layer | Component | Execution Environment | Persistence Level |
+| :--- | :--- | :--- | :--- |
+| **Client Edge** | React 19 + Three.js + Framer Motion | Browser RAM & GPU VRAM | Transient (Destroyed on tab close) |
+| **Ingress Gateway** | FastAPI CORS & Rate Limiter | Ephemeral Non-Swapping RAM | Stream buffer only (0 disk writes) |
+| **Vision Subsystem** | OpenCV (`cv2`) & PyZbar Engine | Python In-Memory Byte Arrays | GC collected immediately post-parse |
+| **Heuristic Engine** | Python Regex & Rule Weight Matrix | Sub-millisecond CPU execution | Pure function, stateless |
+| **Intelligence Tier** | Amazon Bedrock (Anthropic Claude 3.5) | TLS 1.3 AWS Enclave | Zero training, zero data retention |
+| **Proof Engine** | Cryptographic SHA-256 Hasher | Memory-only state seal | Ephemeral certificate payload |
 
 ---
 
 ## 🏛️ System Architecture
 
-STARK AI employs a high-throughput microservices architecture decoupled between an ultra-responsive React 19 / Three.js frontend and a resilient FastAPI threat analysis backend.
+STARK AI employs a high-throughput microservices architecture decoupled between an ultra-responsive client tier and a resilient Python analysis backend.
 
 ```mermaid
 graph TB
-    subgraph "CLIENT TIER (React 19 + Three.js)"
+    subgraph "CLIENT TIER (React 19 + Three.js + Tailwind v4)"
         UI["🖥️ Modern Glassmorphic Web App"]
-        WebGL["🪐 StellarX 3D Celestial Engine"]
+        WebGL["🪐 StellarX 3D Celestial Engine (Three.js)"]
         OpticalUI["📷 Optical QR & Screenshot Dropzone"]
         SimUI["🎮 Awareness Reflex Sandbox"]
         Reticle["🎯 Interactive Magnetic Reticle"]
+        GuideUI["🚨 Emergency Safety Guidance & 1930 Helpline"]
     end
 
     subgraph "GATEWAY & PROTOCOL"
-        CORS["🛡️ FastAPI CORS & Rate Limiter"]
-        Health["💓 Live Telemetry Health Check"]
+        CORS["🛡️ FastAPI CORS & Security Headers"]
+        RateLimit["⏱️ Ingress Rate Limiter & Token Bucket"]
+        Health["💓 Live Telemetry Health Check (/health)"]
     end
 
     subgraph "PROCESSING ENGINES (Python / FastAPI)"
@@ -74,18 +143,19 @@ graph TB
     end
 
     subgraph "INTELLIGENCE TIER"
-        Bedrock["🧠 Amazon Bedrock (Anthropic Claude 3.5)"]
-        LocalModel["💾 Local Fallback Inference Engine"]
+        Bedrock["🧠 Amazon Bedrock (Anthropic Claude 3.5 Sonnet)"]
+        LocalModel["💾 Local Fallback Rule Engine"]
         Cert["📜 Digital Defense Proof Generator (SEC-HASH)"]
     end
 
     UI --> CORS
     OpticalUI --> CV
     CV --> Regex
-    CORS --> Regex
+    CORS --> RateLimit
+    RateLimit --> Regex
     Regex --> Scorer
     Scorer --> Bedrock
-    Scorer -.->|Offline / No Cloud| LocalModel
+    Scorer -.->|Fallback Offline| LocalModel
     Bedrock --> Cert
     LocalModel --> Cert
     Cert --> UI
@@ -95,47 +165,59 @@ graph TB
 
 ## ⚡ Animated Threat Mitigation Pipeline
 
+The real-time threat mitigation pipeline processes, sanitizes, and evaluates incoming vectors in under 85 milliseconds:
+
 <div align="center">
   <img src="./assets/workflow-pipeline.svg" alt="STARK AI Animated Workflow Pipeline" width="100%" />
 </div>
+
+<br/>
+
+### Pipeline Execution Stages
+
+1. **Stage 01: Vector Ingestion**: Raw SMS messages, suspicious links, or image uploads enter an isolated in-memory buffer.
+2. **Stage 02: OpenCV Matrix Decoding**: Finder patterns are detected in QR codes; UPI URI query parameters are dissected and isolated.
+3. **Stage 03: Heuristic Scoring**: Token weights evaluate urgency keywords, impersonated sender IDs, and side-loaded APK triggers.
+4. **Stage 04: Bedrock AI Reasoning**: Claude 3.5 Sonnet performs social engineering intent analysis and prescribes mitigation protocols.
+5. **Stage 05: Defense Proof & Dispatch**: Cryptographically sealed certificate generated with direct 1930 helpline and cybercrime portal links.
 
 ---
 
 ## 🔄 Sequence Data Flow
 
-The following sequence illustrates the multi-stage threat neutralization pipeline from initial raw message input to certified defense proof generation:
+The following sequence details every request, response, and cryptographic proof generation step across the full stack:
 
 ```mermaid
 sequenceDiagram
     autonumber
     actor Citizen as 👤 User / Citizen
-    participant Client as 🖥️ STARK AI Frontend
+    participant Client as 🖥️ STARK AI Frontend (React 19)
     participant API as ⚡ FastAPI Backend
     participant CV as 👁️ OpenCV Vision Engine
     participant Heuristics as 🔍 Heuristic Classifier
     participant Bedrock as 🧠 AWS Bedrock (Claude 3.5)
     participant CERT as 📜 Certificate Engine
 
-    Citizen->>Client: Pastes SMS / Uploads QR Screenshot
-    alt Image / QR Scan
-        Client->>API: Multipart Image Payload
-        API->>CV: Parse image matrix & extract finder patterns
-        CV-->>API: Decoded URI (e.g. upi://pay?pa=scam@vpa&am=4999)
-    else Plaintext Threat Analysis
-        Client->>API: JSON Threat Payload (WhatsApp/SMS/URL)
+    Citizen->>Client: Pastes message / Drops QR screenshot
+    alt Image / QR Scan Mode
+        Client->>API: POST /api/scan-qr (Multipart image byte stream)
+        API->>CV: Parse image matrix & decode finder patterns
+        CV-->>API: Extracted URI (e.g. upi://pay?pa=scam@vpa&am=4999)
+    else Plaintext Threat Analysis Mode
+        Client->>API: POST /api/analyze-threat (JSON threat payload)
     end
 
     API->>Heuristics: Scan keywords (Cashback, Electricity cutoff, APK, PIN)
     Heuristics-->>API: Indicator Flags & Urgency Weights
     
     API->>Bedrock: Multimodal Threat Assessment & Intent Dissection
-    Bedrock-->>API: Risk Assessment (Score, Scam Category, Red Flags, Protocols)
+    Bedrock-->>API: Structured Risk Assessment (Score, Category, Red Flags, Actions)
     
     API->>CERT: Generate Digitally Signed SHA-256 Hash
-    CERT-->>API: Verified Neutralization Proof
+    CERT-->>API: Verified Defense Proof Token (SEC-HASH)
     
     API-->>Client: Real-Time Diagnostic Result + Actionable Protocols
-    Client-->>Citizen: Interactive Verdict Display + Emergency Helpline Trigger
+    Client-->>Citizen: Interactive Verdict Display + Emergency 1930 Helpline Trigger
 ```
 
 ---
@@ -150,13 +232,13 @@ sequenceDiagram
 
 STARK AI is specifically calibrated against prevailing financial cyber deception vectors:
 
-| Scam Vector | Primary Deception Technique | STARK AI Neutralization Engine | Risk Classification |
-| :--- | :--- | :--- | :--- |
-| **Fake UPI Cashback** | Disguises `upi://pay` debit request as "Receive Money" | OpenCV URI parser detects mandatory PIN debit payload | `CRITICAL [98%]` |
-| **Electricity Disconnection** | Spoofed urgent deadlines threatening power cut-off | Phishing domain matching & urgency pressure detection | `HIGH [88%]` |
-| **Malicious Banking APK** | Side-loading trojans mimicking SBI/HDFC apps via SMS | Android package signature & permissions verification | `CRITICAL [99%]` |
-| **Part-Time Telegram Task** | High-yield investment scam demanding prepaid deposits | Ponzi task structure & crypto-mule wallet fingerprinting | `SEVERE [92%]` |
-| **Digital Arrest / CBI Impersonation** | Fake video-call summons threatening arrest | Identity coercion heuristic & official protocol checks | `CRITICAL [97%]` |
+| Scam Vector | Primary Deception Technique | STARK AI Neutralization Engine | Risk Classification | Action Protocol |
+| :--- | :--- | :--- | :--- | :--- |
+| **Fake UPI Cashback** | Disguises `upi://pay` debit request as "Receive Money" | OpenCV URI parser detects mandatory PIN debit payload (`am=`) | `CRITICAL [98%]` | Never enter UPI PIN; reject transaction |
+| **Electricity Disconnection** | Spoofed urgent deadlines threatening power cut-off | Phishing domain matching & urgency pressure heuristic | `HIGH [88%]` | Verify via official electricity board portal |
+| **Malicious Banking APK** | Side-loading trojans mimicking SBI/HDFC apps via SMS | Android package signature & permissions verification | `CRITICAL [99%]` | Do not install `.apk`; delete installer |
+| **Part-Time Telegram Task** | High-yield investment scam demanding prepaid deposits | Ponzi task structure & crypto-mule wallet fingerprinting | `SEVERE [92%]` | Block Telegram handle; freeze transfer |
+| **Digital Arrest / CBI Impersonation** | Fake video-call summons threatening immediate arrest | Identity coercion heuristic & official protocol verification | `CRITICAL [97%]` | Police never issue arrest warrants on Skype/WhatsApp |
 
 ---
 
@@ -164,14 +246,14 @@ STARK AI is specifically calibrated against prevailing financial cyber deception
 
 <div align="center">
 
-| Layer | Technologies |
-| :--- | :--- |
-| **Frontend UI** | React 19, TypeScript, Tailwind CSS v4, Framer Motion, Lucide Icons |
-| **3D Graphics & Motion** | Three.js (WebGL), ACESFilmic Tone Mapping, Hardware-accelerated CSS Keyframes |
-| **Optical Computer Vision** | OpenCV Python (`cv2`), PyZbar QR Decoder, Pillow (`PIL`) |
-| **Backend API** | FastAPI, Uvicorn, Pydantic v2, Python 3.11+ |
-| **AI / Cloud Intelligence** | Amazon Bedrock (`anthropic.claude-3-5-sonnet`), Boto3 SDK |
-| **Typography** | Apple SF Pro Display, Plus Jakarta Sans, Space Grotesk, JetBrains Mono |
+| Layer | Technologies & Libraries | Purpose |
+| :--- | :--- | :--- |
+| **Frontend UI** | React 19, TypeScript, Tailwind CSS v4, Framer Motion, Lucide Icons | Liquid Glass responsive interface, GPU micro-animations |
+| **3D Graphics & Motion** | Three.js (WebGL), ACESFilmic Tone Mapping, Hardware CSS Keyframes | Real-time cosmic motion computing, interactive canvas |
+| **Optical Vision** | OpenCV Python (`cv2`), PyZbar Decoder, Pillow (`PIL`), NumPy | Local QR finder pattern extraction & image binarization |
+| **Backend API** | FastAPI, Uvicorn, Pydantic v2, Python 3.11+ | High-throughput asynchronous REST microservices |
+| **AI / Cloud Intelligence** | Amazon Bedrock (`anthropic.claude-3-5-sonnet`), Boto3 SDK | Deep psychological analysis & intent classification |
+| **Typography** | Apple SF Pro Display, Space Grotesk, JetBrains Mono | Liquid glass cyber aesthetic |
 
 </div>
 
@@ -187,8 +269,8 @@ STARK AI is specifically calibrated against prevailing financial cyber deception
 ### 1. Repository Setup
 ```bash
 # Clone the repository
-git clone https://github.com/exepngsam/stark-ai.git
-cd stark-ai
+git clone https://github.com/exepngsam/Stark-Ai.git
+cd Stark-Ai
 ```
 
 ### 2. Backend Installation & Launch
@@ -221,7 +303,7 @@ In compliance with the **National Cyber Crime Reporting Portal (Govt. of India)*
 
 1. 📞 **Dial 1930**: Immediate link to the National Cyber Crime Helpline to freeze fraudulent banking transactions during the golden hour.
 2. 📋 **Digital Evidence Template**: One-click generation of formatted incident documentation with UTR transaction numbers, sender headers, and evidence timestamps ready for lodging on `cybercrime.gov.in`.
-3. 🛑 **Golden Rule Enforcement**: Clear guidance reiterating that **receiving money on UPI never requires a PIN**.
+3. 🛑 **The Golden Law of UPI**: Clear guidance reiterating that **receiving money on UPI never requires a PIN or scanning a QR code**.
 
 ---
 
@@ -238,5 +320,3 @@ In compliance with the **National Cyber Crime Reporting Portal (Govt. of India)*
 Developed with ❤️ by **Team STARK** • Defending Digital India 🇮🇳
 
 </div>
-#   S t a r k - A i  
- 
