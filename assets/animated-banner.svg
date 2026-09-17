@@ -1,0 +1,169 @@
+<svg width="100%" height="220" viewBox="0 0 1000 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05080f"/>
+      <stop offset="50%" stop-color="#0b1322"/>
+      <stop offset="100%" stop-color="#03060a"/>
+    </linearGradient>
+
+    <!-- Neon Text Gradient -->
+    <linearGradient id="neon-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5ff">
+        <animate attributeName="stop-color" values="#00f5ff;#00e575;#38bdf8;#00f5ff" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#00e575">
+        <animate attributeName="stop-color" values="#00e575;#38bdf8;#00f5ff;#00e575" dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <!-- Scanning Line Gradient -->
+    <linearGradient id="scan-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00f5ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00f5ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#00f5ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Shield Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="laser-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes scanLine {
+      0% { transform: translateY(0px); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(220px); opacity: 0; }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.03); }
+    }
+    @keyframes floatMote {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes rotateReticle {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes blinkText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .scanner {
+      animation: scanLine 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .radar-rot {
+      transform-origin: 880px 110px;
+      animation: rotateReticle 10s linear infinite;
+    }
+    .mote-1 { animation: floatMote 4s ease-in-out infinite; }
+    .mote-2 { animation: floatMote 3.2s ease-in-out infinite 1s; }
+    .blink { animation: blinkText 1.5s ease-in-out infinite; }
+  </style>
+
+  <!-- Container Frame with Rounded Glass Borders -->
+  <rect x="2" y="2" width="996" height="216" rx="16" fill="url(#bg-grad)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Cyber Grid Pattern Lines -->
+  <g stroke="#334155" stroke-opacity="0.18" stroke-width="1">
+    <line x1="0" y1="55" x2="1000" y2="55"/>
+    <line x1="0" y1="110" x2="1000" y2="110"/>
+    <line x1="0" y1="165" x2="1000" y2="165"/>
+    <line x1="200" y1="0" x2="200" y2="220"/>
+    <line x1="400" y1="0" x2="400" y2="220"/>
+    <line x1="600" y1="0" x2="600" y2="220"/>
+    <line x1="800" y1="0" x2="800" y2="220"/>
+  </g>
+
+  <!-- Ambient Light Corner Flares -->
+  <circle cx="120" cy="50" r="90" fill="#00f5ff" fill-opacity="0.06" filter="url(#glow)"/>
+  <circle cx="880" cy="110" r="110" fill="#00e575" fill-opacity="0.05" filter="url(#glow)"/>
+
+  <!-- Dynamic Laser Scan Line -->
+  <g class="scanner">
+    <rect x="2" y="0" width="996" height="12" fill="url(#scan-grad)"/>
+    <line x1="4" y1="6" x2="996" y2="6" stroke="#00f5ff" stroke-width="1.5" filter="url(#laser-glow)"/>
+  </g>
+
+  <!-- Floating Ambient Particles -->
+  <circle class="mote-1" cx="240" cy="70" r="2" fill="#00f5ff" opacity="0.6"/>
+  <circle class="mote-2" cx="720" cy="50" r="2.5" fill="#00e575" opacity="0.7"/>
+  <circle class="mote-1" cx="640" cy="170" r="1.5" fill="#38bdf8" opacity="0.5"/>
+  <circle class="mote-2" cx="320" cy="180" r="2" fill="#00f5ff" opacity="0.4"/>
+
+  <!-- Left Emblem: Stark Aegis Shield -->
+  <g transform="translate(60, 45)">
+    <!-- Outer Shield Halo -->
+    <path d="M50 8 L90 24 V65 C90 98 50 120 50 120 C50 120 10 98 10 65 V24 Z" fill="#031525" stroke="#00f5ff" stroke-width="2" filter="url(#glow)" stroke-opacity="0.7"/>
+    <!-- Inner Core Shield -->
+    <path d="M50 20 L80 32 V62 C80 88 50 105 50 105 C50 105 20 88 20 62 V32 Z" fill="#052538" stroke="#00e575" stroke-width="1.5"/>
+    <!-- Central Reticle Icon -->
+    <circle cx="50" cy="62" r="14" fill="none" stroke="#00f5ff" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <circle cx="50" cy="62" r="6" fill="#00e575"/>
+    <line x1="50" y1="42" x2="50" y2="82" stroke="#00f5ff" stroke-width="1.5"/>
+    <line x1="30" y1="62" x2="70" y2="62" stroke="#00f5ff" stroke-width="1.5"/>
+  </g>
+
+  <!-- Title & Branding -->
+  <text x="190" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Space Grotesk', sans-serif" font-size="44" font-weight="900" letter-spacing="7" fill="url(#neon-glow)" filter="url(#laser-glow)">
+    S T A R K &nbsp; A I
+  </text>
+
+  <!-- Subtitle Tagline -->
+  <text x="192" y="122" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="600" fill="#94a3b8" letter-spacing="1.5">
+    AUTONOMOUS CYBER SENTINEL // ZERO-STORAGE OPTICAL &amp; HEURISTIC THREAT SHIELD
+  </text>
+
+  <!-- Live Status Chips -->
+  <g transform="translate(192, 146)">
+    <!-- Telemetry Chip 1 -->
+    <rect x="0" y="0" width="130" height="26" rx="6" fill="#00e575" fill-opacity="0.1" stroke="#00e575" stroke-width="1"/>
+    <circle class="blink" cx="12" cy="13" r="4" fill="#00e575"/>
+    <text x="24" y="17" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#00e575">CORE: ONLINE</text>
+
+    <!-- Telemetry Chip 2 -->
+    <rect x="140" y="0" width="165" height="26" rx="6" fill="#00f5ff" fill-opacity="0.1" stroke="#00f5ff" stroke-width="1"/>
+    <circle class="blink" cx="152" cy="13" r="4" fill="#00f5ff"/>
+    <text x="164" y="17" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#00f5ff">LATENCY: &lt; 85MS</text>
+
+    <!-- Telemetry Chip 3 -->
+    <rect x="315" y="0" width="180" height="26" rx="6" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1"/>
+    <circle cx="327" cy="13" r="4" fill="#f59e0b"/>
+    <text x="339" y="17" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#f59e0b">PRIVACY: 0-PERSISTENCE</text>
+  </g>
+
+  <!-- Right Holographic Radar Reticle -->
+  <g>
+    <!-- Radar Rings -->
+    <circle cx="880" cy="110" r="70" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+    <circle cx="880" cy="110" r="50" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"/>
+    <circle cx="880" cy="110" r="28" fill="none" stroke="#00f5ff" stroke-opacity="0.3" stroke-width="1"/>
+    <circle cx="880" cy="110" r="6" fill="#00f5ff" fill-opacity="0.5"/>
+
+    <!-- Radar Crosshairs -->
+    <line x1="880" y1="35" x2="880" y2="185" stroke="#334155" stroke-width="1" stroke-dasharray="2 4"/>
+    <line x1="805" y1="110" x2="955" y2="110" stroke="#334155" stroke-width="1" stroke-dasharray="2 4"/>
+
+    <!-- Rotating Radar Needle -->
+    <g class="radar-rot">
+      <line x1="880" y1="110" x2="880" y2="42" stroke="#00e575" stroke-width="2" stroke-linecap="round" filter="url(#laser-glow)"/>
+      <polygon points="880,110 880,42 925,58" fill="#00e575" fill-opacity="0.18"/>
+    </g>
+
+    <!-- Radar Detection Blips -->
+    <circle class="blink" cx="855" cy="85" r="3.5" fill="#ef4444" filter="url(#glow)"/>
+    <circle class="blink" cx="915" cy="135" r="3" fill="#00e575"/>
+    <text x="830" y="196" font-family="'JetBrains Mono', monospace" font-size="9" fill="#64748b" letter-spacing="1">RADAR // ACTIVE</text>
+  </g>
+</svg>

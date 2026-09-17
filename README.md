@@ -1,13 +1,15 @@
 <div align="center">
 
-# 🛡️ S T A R K &nbsp; A I
-### Autonomous Cyber Sentinel & Real-Time Threat Neutralization Platform
+<img src="./assets/animated-banner.svg" alt="STARK AI Animated Banner" width="100%" />
+
+<br/>
 
 [![Build Status](https://img.shields.io/badge/Build-Passing-00e575?style=for-the-badge&logo=githubactions&logoColor=black)](https://github.com)
 [![React](https://img.shields.io/badge/React_19-06b6d4?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![Three.js](https://img.shields.io/badge/Three.js-WebGL_3D-white?style=for-the-badge&logo=threedotjs&logoColor=black)](https://threejs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Amazon Bedrock](https://img.shields.io/badge/AWS_Bedrock-Claude_3.5-FF9900?style=for-the-badge&logo=amazonaws&logoColor=black)](https://aws.amazon.com/bedrock)
+[![OpenCV](https://img.shields.io/badge/OpenCV-Computer_Vision-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org)
 [![License](https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge)](LICENSE)
 
 <br/>
@@ -23,7 +25,7 @@
   <b>To the Perimeter and Beyond — Instant Autonomous Threat Defense for the Modern Digital Citizen</b>
 </p>
 
-[Explore Live Demo](http://localhost:5173/) • [Architecture](#-system-architecture) • [Data Flows](#-data-flow--threat-pipeline) • [Quick Start](#-quick-start) • [Helpline 1930 Integration](#-emergency-incident-response)
+[Explore Live Demo](http://localhost:5173/) • [Architecture](#-system-architecture) • [Animated Pipeline](#-animated-threat-mitigation-pipeline) • [Sequence Flow](#-sequence-data-flow) • [Quick Start](#-quick-start) • [Helpline 1930 Integration](#-emergency-incident-response)
 
 ---
 
@@ -91,7 +93,15 @@ graph TB
 
 ---
 
-## 🔄 Data Flow & Threat Pipeline
+## ⚡ Animated Threat Mitigation Pipeline
+
+<div align="center">
+  <img src="./assets/workflow-pipeline.svg" alt="STARK AI Animated Workflow Pipeline" width="100%" />
+</div>
+
+---
+
+## 🔄 Sequence Data Flow
 
 The following sequence illustrates the multi-stage threat neutralization pipeline from initial raw message input to certified defense proof generation:
 
@@ -130,7 +140,13 @@ sequenceDiagram
 
 ---
 
-## 🎯 Threat Detection Taxonomy
+## 🎯 Threat Detection Radar & Taxonomy
+
+<div align="center">
+  <img src="./assets/threat-radar.svg" alt="STARK AI Animated Threat Radar" width="100%" />
+</div>
+
+<br/>
 
 STARK AI is specifically calibrated against prevailing financial cyber deception vectors:
 
