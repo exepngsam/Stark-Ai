@@ -82,28 +82,25 @@ export const KineticHelixSection: React.FC<KineticHelixSectionProps> = ({
           transition={{ duration: 0.9 }}
           className="lg:col-span-7 relative flex items-center justify-center min-h-[460px] md:min-h-[560px]"
         >
-          {/* Repeating Kinetic Typography Backdrop with iOS 27 Liquid Glass & Ambient Lighting */}
+          {/* Repeating Kinetic Typography Backdrop matching Reference Image */}
           <div className="absolute inset-0 flex flex-col justify-center items-center select-none pointer-events-none overflow-hidden -z-10 leading-[0.88]">
-            {/* Ethereal Volumetric Backlight Beam */}
-            <div className="absolute w-[680px] h-[360px] bg-gradient-to-r from-cyan-500/12 via-emerald-400/20 to-teal-500/12 blur-[110px] rounded-full pointer-events-none" />
-
-            <div className="ios27-liquid-glass-text text-5xl sm:text-7xl md:text-8xl tracking-tighter">
-              CONQUER FRAUD
+            <div className="text-stroke-glass font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+              FRAUD
             </div>
-            <div className="ios27-liquid-glass-stroke text-5xl sm:text-7xl md:text-8xl tracking-tighter">
-              CONQUER FRAUD
+            <div className="text-glow-glass-white font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+              CONQUER
             </div>
-            <div className="ios27-liquid-glass-text text-5xl sm:text-7xl md:text-8xl tracking-tighter">
-              CONQUER FRAUD
+            <div className="text-gradient-glass-emerald font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+              FRAUD
             </div>
-            <div className="ios27-liquid-glass-stroke text-5xl sm:text-7xl md:text-8xl tracking-tighter">
-              CONQUER FRAUD
+            <div className="text-stroke-glass font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+              CONQUER
             </div>
-            <div className="ios27-liquid-glass-text text-5xl sm:text-7xl md:text-8xl tracking-tighter">
-              CONQUER FRAUD
+            <div className="text-stroke-glass font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+              FRAUD
             </div>
-            <div className="ios27-liquid-glass-stroke text-5xl sm:text-7xl md:text-8xl tracking-tighter">
-              CONQUER FRAUD
+            <div className="text-glow-glass-white font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">
+              CONQUER
             </div>
           </div>
 

@@ -310,6 +310,45 @@ body {
   filter: drop-shadow(0 0 10px rgba(0, 229, 117, 0.15));
 }
 
+/* Kinetic Helix Section Precise Styles matching Frame 33 */
+.text-stroke-glass {
+  font-family: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.45);
+  color: transparent;
+  transition: all 0.3s ease;
+}
+.text-stroke-glass:hover {
+  -webkit-text-stroke: 1.5px rgba(0, 229, 117, 0.85);
+  filter: drop-shadow(0 0 16px rgba(0, 229, 117, 0.4));
+}
+
+.text-glow-glass-white {
+  font-family: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 60%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 35px rgba(0, 229, 117, 0.45));
+  transition: all 0.3s ease;
+}
+.text-glow-glass-white:hover {
+  filter: drop-shadow(0 0 22px rgba(255, 255, 255, 1)) drop-shadow(0 0 50px rgba(0, 229, 117, 0.65));
+}
+
+.text-gradient-glass-emerald {
+  font-family: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #a7f3d0 0%, #6ee7b7 32%, #10b981 70%, #059669 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 18px rgba(0, 229, 117, 0.45));
+  transition: all 0.3s ease;
+}
+.text-gradient-glass-emerald:hover {
+  filter: drop-shadow(0 0 28px rgba(0, 229, 117, 0.7));
+}
+
 /* Dark Obsidian Glass Cards */
 .glass-card {
   background: rgba(14, 20, 16, 0.72);
