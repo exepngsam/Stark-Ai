@@ -1,6 +1,6 @@
 <div align="center">
 
-![STARK AI Animated Banner](https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/animated-banner.svg)
+<img src="assets/animated-banner.gif" alt="STARK AI Animated Banner" width="100%" />
 
 <br/>
 
@@ -57,7 +57,7 @@ Built with an **iOS 27 Liquid Glass** design aesthetic and real-time **Three.js 
 The diagram below illustrates the exact interactive journey a user experiences when using STARK AI to diagnose and neutralize a suspicious digital threat:
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/demo-workflow.svg" alt="STARK AI Interactive Demo Workflow" width="100%" />
+  <img src="assets/demo-workflow.svg" alt="STARK AI Interactive Demo Workflow" width="100%" />
 </div>
 
 <br/>
@@ -98,7 +98,7 @@ The diagram below illustrates the exact interactive journey a user experiences w
 STARK AI is architected from the ground up around strict privacy boundaries. No user chats, SMS content, or payment screenshots are ever persisted to disk or databases.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/data-architecture.svg" alt="STARK AI Data Architecture & Memory Lifecycle" width="100%" />
+  <img src="assets/data-architecture.svg" alt="STARK AI Data Architecture & Memory Lifecycle" width="100%" />
 </div>
 
 <br/>
@@ -169,7 +169,7 @@ graph TB
 The real-time threat mitigation pipeline processes, sanitizes, and evaluates incoming vectors in under 85 milliseconds:
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/workflow-pipeline.svg" alt="STARK AI Animated Workflow Pipeline" width="100%" />
+  <img src="assets/workflow-pipeline.svg" alt="STARK AI Animated Workflow Pipeline" width="100%" />
 </div>
 
 <br/>
@@ -226,7 +226,7 @@ sequenceDiagram
 ## 🎯 Threat Detection Radar & Taxonomy
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/threat-radar.svg" alt="STARK AI Animated Threat Radar" width="100%" />
+  <img src="assets/threat-radar.svg" alt="STARK AI Animated Threat Radar" width="100%" />
 </div>
 
 <br/>
@@ -318,7 +318,7 @@ In compliance with the **National Cyber Crime Reporting Portal (Govt. of India)*
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/team-apex.svg" alt="Developed by Team Apex" width="100%" />
+<img src="assets/team-apex.svg" alt="Developed by Team Apex" width="100%" />
 
 <br/>
 

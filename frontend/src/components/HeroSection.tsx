@@ -41,8 +41,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAnalyzeClick, onScan
 
         {/* iOS 27 Liquid Glass Master Headline */}
         <div className="relative mb-4">
-          {/* Subtle Ambient Liquid Glass Refraction Aura */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[120%] bg-radial from-emerald-400/10 via-cyan-400/5 to-transparent blur-3xl pointer-events-none -z-10" />
+          {/* Ethereal Optical Glass Refraction Aura & Ambient Rim Lighting */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125%] h-[135%] bg-radial from-emerald-400/16 via-cyan-400/8 to-transparent blur-3xl pointer-events-none -z-10" />
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[650px] h-[100px] bg-cyan-400/10 blur-2xl rounded-full pointer-events-none -z-10" />
 
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
