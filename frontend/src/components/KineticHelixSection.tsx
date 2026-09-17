@@ -82,6 +82,9 @@ export const KineticHelixSection: React.FC<KineticHelixSectionProps> = ({
           transition={{ duration: 0.9 }}
           className="lg:col-span-7 relative flex items-center justify-center min-h-[460px] md:min-h-[560px]"
         >
+          {/* Ambient Optic Aura behind Helix Loop and Typography */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[460px] bg-radial from-emerald-400/12 via-teal-500/6 to-transparent blur-[90px] rounded-full pointer-events-none -z-10" />
+
           {/* Repeating Kinetic Typography Backdrop matching Reference Image */}
           <div className="absolute inset-0 flex flex-col justify-center items-center select-none pointer-events-none overflow-hidden -z-10 leading-[0.88]">
             <div className="text-stroke-glass font-display font-extrabold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter">

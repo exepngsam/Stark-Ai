@@ -51,21 +51,21 @@ export const GlassHelixLoop: React.FC<{ className?: string }> = ({ className = '
     const curve = new FigureEightCurve(1.6);
     const tubeGeometry = new THREE.TubeGeometry(curve, 120, 0.28, 24, true);
 
-    // Translucent Glass Material with Emerald Tint
+    // Translucent Glass Material with Emerald Tint and Glossy Clearcoat
     const glassMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x1a2e22,
-      emissive: 0x051a0e,
-      emissiveIntensity: 0.4,
-      metalness: 0.1,
-      roughness: 0.08,
-      transmission: 0.92,
-      thickness: 1.5,
-      ior: 1.52,
-      reflectivity: 0.8,
+      color: 0x0c3320,
+      emissive: 0x062816,
+      emissiveIntensity: 0.6,
+      metalness: 0.2,
+      roughness: 0.1,
+      transmission: 0.6,
+      thickness: 1.2,
+      ior: 1.48,
+      reflectivity: 0.9,
       clearcoat: 1.0,
-      clearcoatRoughness: 0.1,
+      clearcoatRoughness: 0.05,
       transparent: true,
-      opacity: 0.88,
+      opacity: 0.92,
     });
 
     const tubeMesh = new THREE.Mesh(tubeGeometry, glassMaterial);
@@ -76,9 +76,9 @@ export const GlassHelixLoop: React.FC<{ className?: string }> = ({ className = '
     const sphereMat = new THREE.MeshStandardMaterial({
       color: 0x00e575,
       emissive: 0x00e575,
-      emissiveIntensity: 3.5,
-      roughness: 0.2,
-      metalness: 0.5,
+      emissiveIntensity: 4.5,
+      roughness: 0.15,
+      metalness: 0.3,
     });
 
     const orb1 = new THREE.Mesh(sphereGeo, sphereMat);
@@ -87,21 +87,25 @@ export const GlassHelixLoop: React.FC<{ className?: string }> = ({ className = '
     scene.add(orb2);
 
     // Point lights attached to spheres for volumetric cast light
-    const light1 = new THREE.PointLight(0x00e575, 4, 6);
-    const light2 = new THREE.PointLight(0x00e575, 4, 6);
+    const light1 = new THREE.PointLight(0x00e575, 4.5, 7);
+    const light2 = new THREE.PointLight(0x00e575, 4.5, 7);
     orb1.add(light1);
     orb2.add(light2);
 
-    // Lighting setup
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    // Dynamic studio lighting for glass refraction & specular glints
+    const ambientLight = new THREE.AmbientLight(0x133824, 2.2);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0x88ffbb, 2.5);
-    directionalLight.position.set(5, 8, 6);
-    scene.add(directionalLight);
+    const keyLight = new THREE.DirectionalLight(0xffffff, 3.2);
+    keyLight.position.set(2, 6, 7);
+    scene.add(keyLight);
 
-    const rimLight = new THREE.DirectionalLight(0x00e575, 3.0);
-    rimLight.position.set(-6, -6, -4);
+    const fillLight = new THREE.DirectionalLight(0x6ee7b7, 2.8);
+    fillLight.position.set(6, 4, 4);
+    scene.add(fillLight);
+
+    const rimLight = new THREE.DirectionalLight(0x00e575, 3.8);
+    rimLight.position.set(-6, -5, -3);
     scene.add(rimLight);
 
     // Mouse Tracking Parallax
