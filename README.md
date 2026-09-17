@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/animated-banner.svg" alt="STARK AI Animated Banner" width="100%" />
+![STARK AI Animated Banner](https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/animated-banner.svg)
 
 <br/>
 
@@ -10,16 +10,17 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Amazon Bedrock](https://img.shields.io/badge/AWS_Bedrock-Claude_3.5-FF9900?style=for-the-badge&logo=amazonaws&logoColor=black)](https://aws.amazon.com/bedrock)
 [![OpenCV](https://img.shields.io/badge/OpenCV-Computer_Vision-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org)
+[![Team Apex](https://img.shields.io/badge/Team-Apex-00f5ff?style=for-the-badge&logo=shield&logoColor=black)](https://github.com/exepngsam/Stark-Ai)
 [![License](https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge)](LICENSE)
 
 <br/>
 
 ```
-╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
-║   [SYSTEM TELEMETRY]: STARK AI ACTIVE // PERIMETER SECURED // ZERO-STORAGE BUFFER ONLINE            ║
-║   PROTECTING AGAINST: UPI CASHBACK FRAUD • ELECTRICITY DEADLINES • TROJAN APKS • QR DEBIT SCHEMAS   ║
-║   HEURISTIC RUNTIME: 42MS  //  BEDROCK AI INFERENCE: 780MS  //  EPHEMERAL RAM BUFFER: 0 BYTES DISK  ║
-╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
+┌─────────────────────────────────────────────────────────────────────────┐
+│  [SYSTEM TELEMETRY]: STARK AI ACTIVE // ZERO-STORAGE BUFFER ONLINE      │
+│  PROTECTING AGAINST: UPI FRAUD • SPOOFED NOTICES • MALICIOUS APKS       │
+│  HEURISTIC: 42MS  //  BEDROCK AI: 780MS  //  DISK RETENTION: 0 BYTES    │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
 
 <p align="center">
@@ -56,7 +57,7 @@ Built with an **iOS 27 Liquid Glass** design aesthetic and real-time **Three.js 
 The diagram below illustrates the exact interactive journey a user experiences when using STARK AI to diagnose and neutralize a suspicious digital threat:
 
 <div align="center">
-  <img src="./assets/demo-workflow.svg" alt="STARK AI Interactive Demo Workflow" width="100%" />
+  <img src="https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/demo-workflow.svg" alt="STARK AI Interactive Demo Workflow" width="100%" />
 </div>
 
 <br/>
@@ -97,7 +98,7 @@ The diagram below illustrates the exact interactive journey a user experiences w
 STARK AI is architected from the ground up around strict privacy boundaries. No user chats, SMS content, or payment screenshots are ever persisted to disk or databases.
 
 <div align="center">
-  <img src="./assets/data-architecture.svg" alt="STARK AI Data Architecture & Memory Lifecycle" width="100%" />
+  <img src="https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/data-architecture.svg" alt="STARK AI Data Architecture & Memory Lifecycle" width="100%" />
 </div>
 
 <br/>
@@ -168,7 +169,7 @@ graph TB
 The real-time threat mitigation pipeline processes, sanitizes, and evaluates incoming vectors in under 85 milliseconds:
 
 <div align="center">
-  <img src="./assets/workflow-pipeline.svg" alt="STARK AI Animated Workflow Pipeline" width="100%" />
+  <img src="https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/workflow-pipeline.svg" alt="STARK AI Animated Workflow Pipeline" width="100%" />
 </div>
 
 <br/>
@@ -225,7 +226,7 @@ sequenceDiagram
 ## 🎯 Threat Detection Radar & Taxonomy
 
 <div align="center">
-  <img src="./assets/threat-radar.svg" alt="STARK AI Animated Threat Radar" width="100%" />
+  <img src="https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/threat-radar.svg" alt="STARK AI Animated Threat Radar" width="100%" />
 </div>
 
 <br/>
@@ -317,6 +318,17 @@ In compliance with the **National Cyber Crime Reporting Portal (Govt. of India)*
 
 <div align="center">
 
-Developed with ❤️ by **Team STARK** • Defending Digital India 🇮🇳
+<img src="https://raw.githubusercontent.com/exepngsam/Stark-Ai/main/assets/team-apex.svg" alt="Developed by Team Apex" width="100%" />
+
+<br/>
+
+[![Team Apex](https://img.shields.io/badge/Engineered_by-Team_Apex-00f5ff?style=for-the-badge&logo=shield&logoColor=black)](https://github.com/exepngsam/Stark-Ai)
+[![Digital India](https://img.shields.io/badge/Mission-Defending_Digital_India_🇮🇳-00e575?style=for-the-badge)](https://cybercrime.gov.in)
+
+<br/>
+
+<p align="center">
+  <b>Developed with ❤️ by <span style="color:#00f5ff;">Team Apex</span> • Defending Digital India 🇮🇳</b>
+</p>
 
 </div>

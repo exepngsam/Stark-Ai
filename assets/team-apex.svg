@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="90" viewBox="0 0 800 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="apex-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5ff">
+        <animate attributeName="stop-color" values="#00f5ff;#00e575;#38bdf8;#00f5ff" dur="5s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#00e575">
+        <animate attributeName="stop-color" values="#00e575;#38bdf8;#00f5ff;#00e575" dur="5s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="apex-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f5ff" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#00e575" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00f5ff" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <filter id="apex-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.3); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.2); }
+      70% { transform: scale(1); }
+    }
+    @keyframes sweepGlow {
+      0% { stroke-dashoffset: 200; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .heart {
+      transform-origin: 232px 45px;
+      animation: heartbeat 1.8s ease-in-out infinite;
+    }
+    .box-border {
+      stroke-dasharray: 40 20;
+      animation: sweepGlow 4s linear infinite;
+    }
+  </style>
+
+  <!-- Background Pill Card -->
+  <rect x="2" y="2" width="796" height="86" rx="20" fill="#040810" stroke="url(#apex-border)" stroke-width="1.5" class="box-border"/>
+
+  <!-- Left Cyber Shield Icon -->
+  <g transform="translate(30, 24)">
+    <path d="M21 3 L37 10 V26 C37 36 21 44 21 44 C21 44 5 36 5 26 V10 Z" fill="#061826" stroke="#00f5ff" stroke-width="1.5" filter="url(#apex-glow)"/>
+    <circle cx="21" cy="24" r="6" fill="#00e575"/>
+  </g>
+
+  <!-- Main Text -->
+  <g transform="translate(85, 48)">
+    <text x="0" y="0" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="600" fill="#94a3b8">
+      Developed with
+    </text>
+
+    <!-- Animated Beating Heart -->
+    <g class="heart">
+      <text x="114" y="0" font-size="18">❤️</text>
+    </g>
+
+    <text x="145" y="0" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif" font-size="17" font-weight="800" fill="url(#apex-grad)" filter="url(#apex-glow)">
+      by Team Apex
+    </text>
+
+    <text x="270" y="0" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="600" fill="#64748b">
+      •
+    </text>
+
+    <text x="290" y="0" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="700" fill="#f1f5f9">
+      Defending Digital India 🇮🇳
+    </text>
+  </g>
+
+  <!-- Right Telemetry Status Pill -->
+  <g transform="translate(640, 28)">
+    <rect width="130" height="34" rx="8" fill="#00e575" fill-opacity="0.1" stroke="#00e575" stroke-width="1"/>
+    <circle cx="18" cy="17" r="4" fill="#00e575">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="30" y="21" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#00e575">
+      CORE // VERIFIED
+    </text>
+  </g>
+</svg>

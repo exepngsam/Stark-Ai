@@ -179,19 +179,6 @@ export const StellarMotion3D: React.FC<StellarMotion3DProps> = ({
     horizonGroup.position.set(0, -4.2, 0);
     cosmosGroup.add(horizonGroup);
 
-    // Curved horizon base arc
-    const horizonCurveGeo = new THREE.CylinderGeometry(8.5, 9.5, 2.5, 32, 1, true);
-    const horizonCurveMat = new THREE.MeshStandardMaterial({
-      color: 0x051a14,
-      roughness: 0.8,
-      metalness: 0.1,
-      flatShading: true,
-    });
-    const horizonCurve = new THREE.Mesh(horizonCurveGeo, horizonCurveMat);
-    horizonCurve.rotation.x = Math.PI * 0.5;
-    horizonCurve.position.set(0, -1.8, -1.0);
-    horizonGroup.add(horizonCurve);
-
     // Low-Poly Cloud Formations (clusters of faceted polyhedra)
     const cloudMat = new THREE.MeshStandardMaterial({
       color: 0xdcfce7,
@@ -628,8 +615,6 @@ export const StellarMotion3D: React.FC<StellarMotion3DProps> = ({
       moonMat.dispose();
       satGeo.dispose();
       satMat.dispose();
-      horizonCurveGeo.dispose();
-      horizonCurveMat.dispose();
       cloudMat.dispose();
       hullMat.dispose();
       canopyMat.dispose();

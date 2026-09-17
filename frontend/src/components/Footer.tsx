@@ -51,7 +51,19 @@ export const Footer: React.FC<FooterProps> = ({ statusMode, awsConnected, bedroc
       </div>
 
       <div className="w-full max-w-7xl mx-auto mt-8 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono-cad text-neutral-400">
-        <div>© 2026 STARK AI PROTOCOL. ALL RIGHTS RESERVED.</div>
+        <div className="flex flex-col sm:flex-row items-center gap-2">
+          <span>© 2026 STARK AI PROTOCOL. ALL RIGHTS RESERVED.</span>
+          <span className="hidden sm:inline text-white/20">•</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] shadow-[0_0_15px_rgba(0,245,255,0.08)]">
+            <span className="text-neutral-400">Developed with</span>
+            <span className="inline-block text-red-500 animate-pulse text-xs">❤️</span>
+            <span className="text-neutral-400">by</span>
+            <span className="font-bold bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent tracking-wide">
+              Team Apex
+            </span>
+            <span className="text-neutral-400">• Defending Digital India 🇮🇳</span>
+          </div>
+        </div>
         <div className="text-emerald-400/90 font-mono-cad">ZERO-STORAGE VERIFIED // 100% PRIVATE</div>
       </div>
     </footer>
